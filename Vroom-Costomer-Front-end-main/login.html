@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Vite App</title>
+</head>
+<body class="flex items-center justify-center h-screen bg-blue-600">
+  <div class="bg-white p-6 rounded-lg md:w-[30%]">
+    <h1 class="text-black text-3xl justify-center">Log In</h1>
+    <form action="login.php" method="POST" class="max-w-md mx-auto">
+        <div class="mt-5">
+          <input type="text" name="email" placeholder="Email" class="border border-gray-400 py-1 px-2 w-full">
+        </div>
+        <div class="mt-5">
+          <input type="password" name="password" placeholder="Password" class="border border-gray-400 py-1 px-2 w-full">
+        </div>
+        <div class="mt-5">
+          <input type="checkbox" name="remember-me" class="border border-gray-400">
+          remenber me
+        </div>
+        <div class="mt-5">
+          <button class="w-full bg-purple-500 py-3 text-center text-white" name="login-btn">Login</button>
+          <p>I don't have an account <a href="Register.html" class="text-bold underline">Register Now</a></p>
+        </div>
+      </form>
+  </div>
+</body>
+</html>
