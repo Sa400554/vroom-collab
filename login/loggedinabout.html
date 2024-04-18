@@ -43,47 +43,25 @@
     </div>
     </div>
   </nav>
-
-  <!-- HOME -->
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-  <!-- QUICK -->
-  <section class="home bg-center bg-cover bg-no-repeat min-h-[35vh] relative flex flex-col justify-center items-center">
-      <div class="form-container">
-          <form class="flex flex-wrap items-center gap-4 bg-white p-5 rounded-md">
-              <div class="input-box flex items-center">
-                  <span class="font-semibold">Location</span>
-                  <select class="ml-2 py-2 px-3 bg-gray-200 rounded-md w-64" id="location-select">
-                      <option value="New York">Kathmandu</option>
-                      <option value="Los Angeles">Pokhara</option>
-                      <option value="Chicago">Biratnagar</option>
-                      <!-- Add more options as needed -->
-                  </select>
-              </div>
-              <div class="input-box flex items-center">
-                  <span class="font-semibold">Pick-Up Date</span>
-                  <input type="date" class="ml-2 py-2 px-3 bg-gray-200 rounded-md">
-              </div>
-              <div class="input-box flex items-center">
-                  <span class="font-semibold">Drop-Off Date</span>
-                  <input type="date" class="ml-2 py-2 px-3 bg-gray-200 rounded-md">
-              </div>
-              <input type="submit" class="btn py-2 px-4 bg-blue-800 text-white font-semibold rounded-md cursor-pointer transition-colors duration-300 hover:bg-main-color" value="Submit">
-          </form>
-      </div>
-  </section>
-  <div class="mt-4 text-center p-4">
-    <p class="text-7xl font-bold mb-4">VROOM</p>
-    <p class="text-4xl font-bold mb-4">Unlock Your Journey at ease with</p>
-    <p class="text-3xl font-bold">VROOM</p>
-    <div class="mt-8">
-        <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-4xl px-12 py-6 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Sign Up</button>
+    <!-- About Us Section -->
+    <div class="container mx-auto mt-24 max-w-screen-md px-4 flex flex-row items-center">
+        <div class="w-1/2">
+            <h2 class="text-3xl font-semibold mb-4">About Us</h2>
+            <p class="text-lg text-gray-800">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod nisi nec nisi consequat, nec condimentum elit tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi. Ut vel orci quis nulla varius accumsan. Sed nec arcu tellus. Nunc quis magna nec elit volutpat auctor. Vestibulum sollicitudin lobortis urna id lacinia. Integer gravida urna a leo dapibus, vel scelerisque nisi fringilla. Aenean auctor convallis ligula, et aliquam justo vestibulum at. Integer tempus elit eget nisi elementum volutpat.
+            </p>
+            <p class="text-lg text-gray-800 mt-4">
+                Donec fermentum lectus magna, nec laoreet ex finibus eu. Curabitur dapibus velit nisl, eu pellentesque lorem lacinia eget. Nulla facilisi. Vivamus finibus erat non nunc posuere, at scelerisque leo pretium. Phasellus quis mauris eget nisi elementum facilisis. Nulla sed erat vel justo sodales ultrices. Integer id lectus vel ligula posuere finibus vel ac erat. Nullam nec dictum libero, vel lobortis urna. Sed varius ipsum vel eros hendrerit, at cursus lacus tempor.
+            </p>
+        </div>
+        <div class="w-1/3 ml-auto mr-4">
+            <img src="ye.jpg" alt="About Us Photo" class="w-full">
+        </div>
+        
     </div>
-</div>
-<!-- FOOTER -->
 
-
+    <!-- FOOTER -->
+    
 <footer class="bg-white dark:bg-gray-900">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
@@ -164,19 +142,6 @@
     
 </footer>
 
-  <script>
-      $(document).ready(function() {
-          $('#location-select').select2();
-      });
-  </script>
-  
-
-
-
-    
-</form>
-
-
-  
 </body>
+
 </html>

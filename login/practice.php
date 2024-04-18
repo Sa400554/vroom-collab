@@ -56,7 +56,6 @@
                       <option value="New York">Kathmandu</option>
                       <option value="Los Angeles">Pokhara</option>
                       <option value="Chicago">Biratnagar</option>
-                      <!-- Add more options as needed -->
                   </select>
               </div>
               <div class="input-box flex items-center">
@@ -93,30 +92,58 @@
 <div class="bg-white">
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
       <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-        <a href="booking.html" class="group">
-          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-            <img src="1.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-80 w-full object-cover object-center group-hover:opacity-75">
-          </div>
-          <h3 class="mt-4 text-sm text-gray-700">Mazda</h3>
-          <p class="mt-1 text-lg font-medium text-gray-900">$480</p>
-          <button class="mt-2 text-sm text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2">Book Now</button>
-        </a>
-        <a href="booking.html" class="group">
-          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-            <img src="2.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-80 w-full object-cover object-center group-hover:opacity-75">
-          </div>
-          <h3 class="mt-4 text-sm text-gray-700">Porche</h3>
-          <p class="mt-1 text-lg font-medium text-gray-900">$305</p>
-          <button class="mt-2 text-sm text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2">Book Now</button>
-        </a>
-        <a href="booking.html" class="group">
-          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-            <img src="3.png" alt="Person using a pen to cross a task off a productivity paper card." class="h-80 w-full object-cover object-center group-hover:opacity-75">
-          </div>
-          <h3 class="mt-4 text-sm text-gray-700">911</h3>
-          <p class="mt-1 text-lg font-medium text-gray-900">$289</p>
-          <button class="mt-2 text-sm text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 hr">Book Now</button>
-        </a>
+  
+      <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="message-show"></div>
+                        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                            <div class="studentdata">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    
+    
+    <div class="bg-white">
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+    <script>
+        $(document).ready(function () {
+            getdata();
+        });
+
+        function getdata()
+        {
+            $.ajax({
+                type: "GET",
+                url: "fetch.php",
+                success: function (response) {
+                    $.each(response, function (key, value) { 
+                        $('.studentdata').append('<a href="booking.html" class="group">\
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">\
+                                <img src="1.jpg" class="h-80 w-full object-cover object-center group-hover:opacity-75">\
+                            </div>\
+                            <h3 class="mt-4 text-sm text-gray-700">'+value['Name']+'</h3>\
+                            <p class="mt-1 text-lg font-medium text-gray-900">'+value['PricePerKm']+'</p>\
+                            <button class="mt-2 text-sm text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2">Book Now</button>\
+                        </a>');
+                    });
+                }
+            });
+        }
+    </script>
+         </div>
+    </div>
+  </div>
       </div>
     </div>
   </div>
@@ -209,31 +236,30 @@
 </html>
 
 <!-- The JavaScript for search functionality -->
-
 <script>
-    // Function to perform search
-    function performSearch() {
-        // Get the search query
-        var searchQuery = document.getElementById('default-search').value.toLowerCase();
-        // Get all the product cards
-        var products = document.querySelectorAll('.grid .group');
-        // Loop through each product card
-        products.forEach(function(product) {
-            // Get the product name
-            var productName = product.querySelector('h3').textContent.toLowerCase();
-            // Get the product price
-            var productPrice = product.querySelector('p').textContent.toLowerCase();
-            // If the product name or price contains the search query, show the product card, else hide it
-            if (productName.indexOf(searchQuery) > -1 || productPrice.indexOf(searchQuery) > -1) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
-    }
+        // Function to perform search
+        function performSearch() {
+            // Get the search query
+            var searchQuery = document.getElementById('default-search').value.toLowerCase();
+            // Get all the product cards
+            var products = document.querySelectorAll('.grid .group');
+            // Loop through each product card
+            products.forEach(function(product) {
+                // Get the product name
+                var productName = product.querySelector('h3').textContent.toLowerCase();
+                // Get the product price
+                var productPrice = product.querySelector('p').textContent.toLowerCase();
+                // If the product name or price contains the search query, show the product card, else hide it
+                if (productName.indexOf(searchQuery) > -1 || productPrice.indexOf(searchQuery) > -1) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
 
-    // Add event listener for input change
-    document.getElementById('default-search').addEventListener('input', function() {
-        performSearch();
-    });
-</script>
+        // Add event listener for input change
+        document.getElementById('default-search').addEventListener('input', function() {
+            performSearch();
+        });
+    </script>
