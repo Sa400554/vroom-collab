@@ -1,0 +1,108 @@
+.Inventory {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(127, 172, 255, 0.5);
+}
+
+.Item-container {
+    width: calc(33.33% - 20px); /* 20px is the combined margin and padding */
+    margin-bottom: 20px; /* Adjust spacing between rows */
+    background-color: #fff;
+    height: 400px;
+    width: 450px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Other styles remain the same */
+
+.Car-Name-Type {
+    height: 15%;
+    padding: 5px;
+    border-radius: 9px;
+    background:none;
+}
+.Car-Name-Type h3,h5{
+    background: none;
+}
+.Car-Name-Type h5{
+    padding: 5px;
+    color: #5493FF;
+}
+.Car-img{
+    height: 60%;
+    background: url('https://images.unsplash.com/photo-1580274455191-1c62238fa333?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover; /* Adjust background size if needed */
+    background-repeat: no-repeat; /* Ensure image doesn't repeat */
+    background-position: center; /* Center the background image */
+}
+.car-details ,.fule,.transmission,.capacity{
+    /* background-color: rgb(135, 198, 240); */
+    display: flex;
+    height: 10%;
+    justify-content: space-evenly;
+    font-weight: 500;
+    background: none;
+}
+
+.price-edit{
+    font-size: 20px;
+    border-radius: 9px;
+    font-weight: 600;
+    display: flex;
+    /* background-color: rgb(135, 240, 140); */
+    justify-content: space-evenly;
+    height: 15%;
+    background: none;
+}
+.edit{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    /* text-align: center; */
+}
+.edit a{
+    border-radius: 6px;
+    color: #cddffc;
+    background-color:#5493FF;
+    text-decoration: none;
+    padding: 2px 22px;
+}
+.edit a:hover{
+    color: rgb(242, 251, 252);
+    transition: 500ms;
+    transform: scale(1.05);
+}
+.Price-per-day ,.Price-per-day h3{
+    font-size: 20px;
+    color: #5493FF;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Add-Btn{
+    height: 50px;
+    margin-left: 6.5rem;
+    padding: 10px;
+}
+.Add-Btn a{
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #cddffc;
+    background-color:#5493FF;
+    text-decoration: none;
+    padding: 10px 22px;
+}
+.Add-Btn a:hover{
+    background-color: #54ff79;
+    color: #5493FF;
+    transition: 500ms;
+    transform: scale(1.05);
+}
