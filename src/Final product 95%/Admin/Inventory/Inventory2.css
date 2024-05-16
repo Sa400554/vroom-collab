@@ -1,0 +1,92 @@
+.Inventory{
+    flex-wrap: wrap;
+    display: flex;
+    margin-left: 6.5rem;
+    margin-top: 10px;
+    height: 80.5vh;
+    width: 70.4vw;
+    padding: 10px;
+    justify-content: space-evenly;
+    /* background-color: rgba(127, 172, 255, 0.5); */
+}
+.Item-container{
+    background-color: #ffffff;
+    height: 300px;
+    width: 350px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+}
+.Car-Name-Type {
+    height: 20%;
+    padding: 5px;
+    border-radius: 9px;
+    background:none;
+}
+.Car-Name-Type h5,h6{
+    background: none;
+}
+.Car-Name-Type h6{
+    /* padding: 5px; */
+    color: #5493FF;
+}
+.Car-img{
+    height: 55%;
+    background: url('https://images.unsplash.com/photo-1580274455191-1c62238fa333?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover; /* Adjust background size if needed */
+    background-repeat: no-repeat; /* Ensure image doesn't repeat */
+    background-position: center; /* Center the background image */
+}
+.car-details ,.fule,.transmission,.capacity{
+    /* background-color: rgb(135, 198, 240); */
+    display: flex;
+    height: 10%;
+    justify-content: space-evenly;
+    font-weight: 500;
+    background: none;
+}
+
+.price-edit{
+    font-size: 20px;
+    border-radius: 9px;
+    font-weight: 600;
+    display: flex;
+    /* background-color: rgb(135, 240, 140); */
+    justify-content: space-evenly;
+    height: 10%;
+    background: none;
+}
+.edit{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    /* text-align: center; */
+}
+.edit a{
+    padding: 2px 22px;
+}
+.edit a:hover{
+    color: rgb(242, 251, 252);
+    transition: 500ms;
+    transform: scale(1.05);
+}
+.Price-per-day ,.Price-per-day h3{
+    font-size: 20px;
+    color: #5493FF;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addcarBtn{
+    margin-left: 6.7rem;
+    /* padding: 20px; */
+}
+.modal-dialog{
+    background-color: #70141400;
+}
+.modal.fade.show{
+    background-color: #00000080; /* Adjust the alpha value (last parameter) to control transparency */
+}

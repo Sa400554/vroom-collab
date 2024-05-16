@@ -1,0 +1,85 @@
+.inq-area{
+    margin-left: 6.5rem;
+    height: 86.5vh;
+    flex-wrap: wrap;
+    display: flex;
+    width: 70.4vw;
+    justify-content: space-between;
+    /* background-color: rgba(127, 172, 255, 0.5); */
+    padding: 10px;
+}
+.Costomer-inq{
+    border-radius: 9px;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    background-color: antiquewhite;
+}
+.Costomer-inq:hover{
+    transition: 500ms;
+    transform: scale(1.06);
+}
+.inq-left{
+    border-radius: 9px;
+    width: 60%;
+    background-color: rgb(215, 250, 215);
+    display: flex;
+    flex-direction: column;
+}
+.in-left-up{
+    border-top-left-radius: 9px;
+    padding: 7px;
+    background-color: #ffffff;
+    height: 30%;
+    display: flex;
+}
+.Costomer-name{
+    background: none;
+    margin: 15px
+    
+}
+.Costomer-name h6{
+    color: #5493FF;
+    background: none;
+}
+
+
+.in-left-down{
+    border-bottom-left-radius: 9px;
+    height: 70%;
+    background-color: #ffffff;
+    padding:10px;
+}
+.in-left-down h4{
+    background: none;
+}
+.profile-img{
+    border-radius: 50%;
+    /* background: url('https://plus.unsplash.com/premium_photo-1672239496290-5061cfee7ebb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+    background-size: cover; /* Adjust background size if needed */
+    background-repeat: no-repeat; /* Ensure image doesn't repeat */
+    background-position: center; /* Center the background image */
+    background-color: cadetblue;
+    height: 50px;
+    width: 50px;
+}
+.inq-right {
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    width: 40%;
+        height: 100%; /* Ensure the div occupies the full height of its parent */
+        /* background-image: url('https://images.unsplash.com/photo-1580274455191-1c62238fa333?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+        background-size: cover; /* Adjust background size if needed */
+        background-repeat: no-repeat; /* Ensure image doesn't repeat */
+        background-position: center; /* Center the background image */
+        background-color: rgb(134, 134, 226);   
+}
+#Inq-mod{
+    background-color: #00000080;
+}
+.modal-dialog{
+    background-color: #70141400;
+}
+.modal.fade.show{
+    background-color: #00000080; /* Adjust the alpha value (last parameter) to control transparency */
+}
