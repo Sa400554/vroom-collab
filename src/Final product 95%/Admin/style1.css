@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Barlow", sans-serif;
+    margin: 0px;
+    /* background-color: #F3F2F7; */
+}
+body{
+    display: flex;
+}
+.Right-container{
+    margin-left: 20rem;
+
+    width: 86vw;
+    display: flex;
+    /* background-color: beige; */
+    flex-direction: column;
+}
+.Nav-bar{
+    height: 100vh;
+    width: 20rem;
+    position: fixed;
+    background-color: #ffffff;
+}
+.Hori-nav{
+    display: flex;
+    height: 50px;
+    /* padding: 40px 50px 40px 100px; */
+    background-color: aqua;
+}
+.search{
+    /* width: 90%;
+    background-color: aquamarine; */
+
+}
+.search p1 {
+    color: #464255;
+    font-weight: 600;
+    font-size: 32px;
+}
+.search p{
+    font-size: 18px;
+    color: #A3A3A3;
+}
+.search p1,p{
+    background:none;
+    padding: 3px;
+}
+.info{
+    width: 20%;
+    border-left: 2px solid #D0D6DE;
+    /* background-color: blue; */
+    display: flex;
+}
+.Admin-Name{
+    padding: 15px;
+    color: #464255;
+    font-size: 16px;
+}
+.profile{
+    margin: 5px;
+    background-image: url('https://cdn-icons-png.flaticon.com/128/1144/1144760.png');
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    /* background-color: antiquewhite; */
+}
+.Fill{
+    margin-right:50px;
+    display: flex;
+    padding: 40px 90px;
+    justify-content: space-evenly;
+    /* background-color: rgb(213, 193, 236); */
+}
+.card{
+    background-color: #FFF;
+    height: 172px;
+    width: 330px;
+    border-radius: 14px;
+    display: flex;
+    /* justify-content: space-between; */
+}
+.card:hover{
+    transition: 400ms;
+    transform: scale(1.06);
+}
+.card-1-left{
+    width: 50%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background: none;
+    /* background-color: aqua; */
+}
+.card-1-left div{
+    margin-left: 60px;
+    border-radius: 50%;
+    height: 85px;
+    width: 85px;
+    background-color:#5493FF ;
+}
+.card-1-right{
+    width: 50%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background:none;
+}
+.card-1-right div{
+    padding: 3px;
+    background-color: #ffffff;
+}
+.card-value{
+    font-size: 46px;
+    font-weight: 700;
+    color: #464255;
+}
+.card-info{
+    color: #464255;
+}
+.card-date{
+    color: #A3A3A3;
+    font-size: 12px;
+}
+
+.vroom-title{
+    margin: 30px 50px;
+}
+.vroom-title div{
+    background-color: #ffffff;
+}
+.Vroom-Logo{
+    font-size:48px ;
+    font-weight: 700;
+    color: #5493FF ;
+}
+.Vroom-slogen{
+    color: #B9BBBD;
+}
+.nav-content ul{
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+    
+}
+.nav-content ul li{
+    display:flex;
+    list-style: none;
+    margin: 15px;
+    width: 170px;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    color: #464255;
+}
+.nav-icons{
+    height: 20px;
+    background: none;
+    width: 20px;
+    margin-right: 20px;
+
+}
+.nav-icons img{
+    background: none;
+    height: 20px;
+
+}
+.Link{
+    text-decoration: none;
+    width: 2px;
+    margin-top: 9px;
+    background-color: #FFF;
+    padding: 1px;
+    border-radius: 5px;
+}
+.Link:hover{
+    background-color: #5493FF;
+    transition: 500ms;
+}
+.nav-content ul li:hover{
+    transition: 500ms;
+    filter: hue-rotate(70deg);
+    font-size: 18px;
+    color: #00b075;
+    font-weight: 600;   
+    background-color: #00b07546;
+    /* border-left:4px solid #00b075; */
+
+}
+#Active{
+    /* filter: invert(100%); */
+    font-size: 18px;
+    color: #00b075;
+    font-weight: 600;
+    background-color: #5493FF;
+}
+#search-bar{
+    width: 800px;
+    height: 30px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #ffffff;
+}
+#Search-btn{
+    background-size: cover;
+    background-color: #ffffff;
+    border-radius: 0px 5px 5px 0px;
+    height: 50px;
+    width: 50px;
+    border: none;
+}
+#Search-btn img{
+    background:none;
+    filter: invert(60%);
+    height: 30px;
+    width: 30px;
+}
+
+#search-bar:focus ,#Search-btn:focus{
+    background-color:#c4c4c42a ;
+    color: #5493FF;
+    font-weight: 600;
+    outline: none;
+}
+.Order-search{
+    height: 100px;
+    display: flex;
+    /* background-color: #5b7fcc3d; */
+    align-items: center;
+    justify-content: center;
+}
+.User-list{
+    flex-wrap: wrap;
+    display: flex;
+    margin-left: 6.5rem;
+    height: 86.5vh;
+    width: 70.4vw;
+    padding: 10px;
+    justify-content: space-between;
+    /* background-color: rgba(127, 172, 255, 0.5); */
+}
+table {
+    width: 100%;
+    height: 10%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #5493FF;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+    background-color: #ffc0cb;
+}
+td:last-child {
+    color: white;
+}
