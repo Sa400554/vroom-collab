@@ -2,7 +2,7 @@
 // Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Include the connection file
-    $conn = mysqli_connect("localhost", "root", "", "vroom");
+    $conn = mysqli_connect("localhost", "root", "", "vroomcarrental");
 
     // Check connection
     if (!$conn) {
@@ -12,18 +12,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Check if the register-btn is set in the POST request
     if (isset($_POST['register-btn'])) {
         // Get form data
-        $firstname = $_POST['firstname'];
-        $surname = $_POST['surname'];
+        $name = $_POST['name'];
+        $number = $_POST['number'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $confirm_password = $_POST['confirm-password'];
+        $accType = $_POST['accType'];
 
         // Prepare SQL statement
-        $query = "INSERT INTO `register`(`FirstName`, `Surname`, `Email`, `Password`) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO `users`(`Name`, `Number`, `Email`, `Password`, `AccType`) VALUES (?, ?, ?, ?, ?)";
 
         // Prepare and bind parameters
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("ssss", $firstname, $surname, $email, $password);
+        $stmt->bind_param("ssssi", $name, $number, $email, $password, $accType);
 
         // Execute the statement
         if ($stmt->execute()) {
