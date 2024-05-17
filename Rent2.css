@@ -17,12 +17,12 @@
     flex-direction: row;
 }
 .Inventory{
-    flex-wrap: wrap;
-    display: flex;
-
+    
     /* height: 86.5vh; */
     /* width: 70.4vw; */
     padding: 10px;
+    flex-wrap: wrap;
+    display: flex;
     justify-content: space-between;
     /* background-color: rgba(127, 172, 255, 0.5); */
 }
@@ -55,7 +55,7 @@
     background-position: center; /* Center the background image */
 }
 .car-details ,.fule,.transmission,.capacity{
-    /* background-color: rgb(135, 198, 240); */
+    /* background-color: #5bdb4a56; */
     display: flex;
     height: 10%;
     justify-content: space-evenly;

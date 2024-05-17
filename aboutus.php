@@ -1,33 +1,58 @@
-    <?php
-
-    include ("TopMenu.php");
-    ?>
+<?php
+include("TopMenu.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vroom Car Rental</title>
+    <title>About us</title>
 </head>
 <link rel="stylesheet" href="index2.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/fastbootstrap@2.2.0/dist/css/fastbootstrap.min.css" rel="stylesheet"
-    integrity="sha256-V6lu+OdYNKTKTsVFBuQsyIlDiRWiOmtC8VQ8Lzdm2i4=" crossorigin="anonymous">
+integrity="sha256-V6lu+OdYNKTKTsVFBuQsyIlDiRWiOmtC8VQ8Lzdm2i4=" crossorigin="anonymous">
 
 <body>
-    <div class="body">
-        <h1 style="font-weight:900;">VROOM</h1>
-        <h3 style="font-weight:700;">The Ultimate Rental Experience Awaits You</h3>
-
-        <a href="Rent.php" class="btn btn-danger sub-btn" style="border-radius:50px; padding: 20px 40px;">
-            <h4>Start Renting <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-                </svg></h4>
-        </a>
+   <section class="bg-light section section-lg-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-title">Why Us ? </h2>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+        <div class="text-center shadow card py-3 border-0 rounded-sm">
+          <div class="card-body">
+            <img src="https://cdn-icons-png.freepik.com/256/8376/8376801.png" alt="distance" style="height:100px;width:100px;">
+            <h4 class="mb-3">Your location Your Choice</h4>
+            <p><br> `Drive the Distance you want`</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+        <div class="text-center shadow card py-3 border-0 rounded-sm">
+          <div class="card-body">
+            <img src="https://cdn-icons-png.freepik.com/256/8099/8099990.png?semt=ais_hybrid" alt="cars" style="height:100px;width:100px;">
+            <h4 class="mb-3">Luxury.</h4>
+            <h6>Speed. Capacity. Comfort. </h6>
+            <p>We have it all</p>
+        </div>
     </div>
-    <footer class="footer">
+</div>
+<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+    <div class="text-center shadow card py-3 border-0 rounded-sm">
+        <div class="card-body">
+              <img src="https://cdn-icons-png.freepik.com/256/5618/5618465.png" alt="money" style="height:100px;width:100px;">
+
+            <h4 class="mb-3">It pays to Discover.</h4>
+            <p>"Save Smart, Travel Far: The Only Car Rental That Makes Every Mile Count!" </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
         <div class="div-1">
             <div class="TEXTS">
                 VROOM CAR RENTAL
@@ -76,14 +101,14 @@
                 <a href="#">Demo</a>
             </ul>
         </div>
-        <!-- <div class="div-2">
+        <div class="div-2">
             <h4>Services</h4>
             <ul class="list-group">
                 <a href="#">Shopify</a>
                 <a href="#">Wordpress</a>
                 <a href="#">UIUX/Designe</a>
             </ul>
-        </div> -->
+        </div>
 
         <div class="div-4">
             <h4>Location :</h4>
@@ -93,15 +118,10 @@
         </div>
 
     </footer>
-    </div>
 
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script>
-
-    </script>
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </html>

@@ -1,37 +1,163 @@
+ <script>
+          var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+          var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl);
+          });
+          toastList.forEach(function(toast) {
+            toast.show();
+          });
+    </script>
+<?php
+include ("TopMenu.php");
+// Check if the request method is POST
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+  // Establish database connection
+  $conn = mysqli_connect('localhost', 'root', '', 'vroomcarrental');
+
+  // Check connection
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+
+  // Check if the login-btn is set in the POST request
+  if (isset($_POST['login-btn'])) {
+    // Get form data
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Prepare SQL statement
+    $query = "SELECT * FROM `Users` WHERE `Email` = ? AND `Password` = ?";
+
+    // Prepare and bind parameters
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("ss", $email, $password);
+
+    // Execute the statement
+    $stmt->execute();
+
+    // Check if a matching record is found
+    $result = $stmt->get_result();
+    if ($result->num_rows == 1) {
+      // Display toast notification
+       $row = $result->fetch_assoc();
+
+            // Start session
+  
+
+            // Store user data in session variables
+            $_SESSION['user_id'] = $row['UserID'];
+            $_SESSION['user_name'] = $row['Name'];
+            $_SESSION['user_email'] = $row['Email'];
+            $_SESSION['user_Ph'] = $row['Number'];
+
+      echo '<div class="toast-container top-0 start-50 translate-middle-x p-3">
+          <div class="toast show fade text-bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <div class="d-flex gap-4">
+                <span class="text-primary"><i class="fa-solid fa-circle-info fa-lg"></i></span>
+                <div class="d-flex flex-grow-1 align-items-center">
+                  <span class="fw-semibold">Login successful! Redirecting...</span>
+                  <button type="button" class="btn-close btn-close-sm btn-close-black ms-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>';
+
+           echo '<script>
+          setTimeout(function() {
+            window.location.href = "index.php";
+          }, 800);
+        </script>';
+    } else {
+      // Display an alert message if login fails
+       echo '<div class="toast-container top-0 start-50 translate-middle-x p-3">
+          <div class="toast show fade text-bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <div class="d-flex gap-4">
+                <span class="text-primary"><i class="fa-solid fa-circle-info fa-lg"></i></span>
+                <div class="d-flex flex-grow-1 align-items-center">
+                  <span class="fw-semibold">Login Failed! Incorrect Email/Password</span>
+                  <button type="button" class="btn-close btn-close-sm btn-close-black ms-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>';
+    }
+
+    // Close statement
+    $stmt->close();
+  } else {
+    // Redirect to the login page with an alert message
+     echo '<div class="toast-container top-0 start-50 translate-middle-x p-3">
+          <div class="toast show fade text-bg-warning" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <div class="d-flex gap-4">
+                <span class="text-primary"><i class="fa-solid fa-circle-info fa-lg"></i></span>
+                <div class="d-flex flex-grow-1 align-items-center">
+                  <span class="fw-semibold">Invalid request method</span>
+                  <button type="button" class="btn-close btn-close-sm btn-close-black ms-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>';
+    echo "<script>window.location.href = 'login.php';</script>";
+  }
+
+  // Close connection
+  $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Vite App</title>
+  <title>Login Form</title>
+  <link rel="stylesheet" href="index2.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fastbootstrap@2.2.0/dist/css/fastbootstrap.min.css" rel="stylesheet" integrity="sha256-V6lu+OdYNKTKTsVFBuQsyIlDiRWiOmtC8VQ8Lzdm2i4=" crossorigin="anonymous">
 </head>
-<link href="https://cdn.jsdelivr.net/npm/fastbootstrap@2.2.0/dist/css/fastbootstrap.min.css" rel="stylesheet" integrity="sha256-V6lu+OdYNKTKTsVFBuQsyIlDiRWiOmtC8VQ8Lzdm2i4=" crossorigin="anonymous">
 
-<body >
-
-  <div class=" flex items-center justify-center h-screen bg-sky-300		">
-
-  <div class="bg-white p-6 rounded-lg md:w-[30%]">
-    <h1 class="text-black text-3xl justify-center">Log In</h1>
-    <form action="loginD.php" method="POST" class="max-w-md mx-auto">
-        <div class="mt-5">
-          <input type="text" name="email" placeholder="Email" class="border border-gray-400 py-1 px-2 w-full">
+<body>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title text-center">Log In</h1>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+              <div class="mb-3">
+                <input type="text" name="email" placeholder="Email" class="form-control">
+              </div>
+              <div class="mb-3">
+                <input type="password" name="password" placeholder="Password" class="form-control">
+              </div>
+        
+              <div class="mb-3">
+                <button type="submit" class="btn btn-primary w-100" name="login-btn">Login</button>
+                <p class="text-center mt-2">Don't have an account? <a href="register.php">Register Now</a></p>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="mt-5">
-          <input type="password" name="password" placeholder="Password" class="border border-gray-400 py-1 px-2 w-full">
-        </div>
-        <div class="mt-5">
-          <input type="checkbox" name="remember-me" class="border border-gray-400">
-          Pemember me
-        </div>
-        <div class="mt-5">
-          <button class="w-full bg-indigo-400 py-3 text-center text-white" name="login-btn">Login</button>
-          <p>I don't have an account <a href="Register.html" class="text-bold underline">Register Now</a></p>
-        </div>
-      </form>
+      </div>
+    </div>
   </div>
-  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+   
 </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </html>
